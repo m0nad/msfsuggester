@@ -7,7 +7,7 @@ form metasploit with a msfcli command line.
 Installation
 --
 ```
-$ git clone https://github.com/m0nad/msfsuggeter
+$ git clone https://github.com/m0nad/msfsuggester
 $ gem install nokogiri
 ```
 Usage
