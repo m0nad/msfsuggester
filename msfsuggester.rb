@@ -64,14 +64,14 @@ def output(vulns, msf)
 	print "== (#{msf[:rank]}) #{msf[:name]} ==\n"
 	if (msf[:path] =~ /exploits/)
 		msf[:path].gsub! 'exploits', 'exploit'
-		rhost = "RHOST="
+		rhost = "RHOST"
 	elsif (msf[:path] =~ /scanner/)
-		rhost = "RHOSTS="
+		rhost = "RHOSTS"
 	end
-	print "msfcli #{msf[:path]} "
-	print rhost + "#{vulns[:host]} " if vulns[:host]
-	print "RPORT=#{vulns[:port]} E\n" if vulns[:port]
-	print "Refs:"
+	print "msfconsole -x \"use #{msf[:path]}; "
+	print "set " + rhost + " " + "#{vulns[:host]}; " if vulns[:host]
+	print "set RPORT #{vulns[:port]}; run\"\n" if vulns[:port]
+	print "Refereces:"
 	print " CVE:#{msf[:cve]}" if msf[:cve]
 	print " BID:#{msf[:bid]}" if msf[:bid]
 	print "\n\n"
