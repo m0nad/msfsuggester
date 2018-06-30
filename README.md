@@ -2,7 +2,7 @@ Msfsuggester
 ============
 
 Msfsuggester is a tool that parse OpenVAS XML output and suggest an exploit
-form metasploit with a msfcli command line.
+from metasploit with a msfcli command line.
 
 Installation
 --
